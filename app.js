@@ -45,6 +45,7 @@ app.post('/login', (req, res) => {
     if (!username) return res.status(400).send('Username required');
 
     const user = { name: username, role: 'user' };
+    // const user = { name: username, role: 'admin' };
 
     // Generate Token
     const accessToken = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '1h' });
